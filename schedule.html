@@ -7,57 +7,83 @@
   <meta name="description" content="Wedding weekend schedule for Jen and Brian.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Lato:wght@400;700&family=Parisienne&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="wordmark" href="index.html">Jen and Brian</a>
-      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <ul class="main-nav" id="main-nav" data-nav>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
-        <li><a class="active" href="schedule.html">Schedule</a></li>
-        <li><a href="places-to-visit.html">Places to Visit</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-      </ul>
-    </div>
-  </header>
+  <div class="page-hero page-hero--subtle">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="index.html">Jen and Brian</a>
+        <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav">Menu</button>
+        <ul class="main-nav" id="main-nav" data-nav>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a class="active" href="schedule.html">Schedule</a></li>
+          <li><a href="places-to-visit.html">Places to Visit</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="rsvp.html">RSVP</a></li>
+        </ul>
+      </div>
+    </header>
+  </div>
 
   <main class="page">
-    <section class="section reveal">
-      <p class="eyebrow">Wedding Weekend Schedule</p>
-      <h1>Mark your calendar.</h1>
-      <p class="lead">Here is the current timeline. We will update this page as details are finalized.</p>
+    <section class="schedule-day reveal">
+      <p class="schedule-day-label">Friday, December 18, 2026</p>
+
+      <div class="schedule-timeline">
+        <article class="schedule-item">
+          <time class="schedule-time" datetime="2026-12-18T18:00">Friday, 6:00 PM</time>
+          <h3 class="schedule-title">Welcome Dinner with Family</h3>
+          <p class="schedule-address">Location TBD</p>
+          <p>We will share the exact dinner address once it is finalized. This will be a relaxed evening with close family before the wedding day.</p>
+          <p class="schedule-actions">
+            <a href="places-to-visit.html">Where to stay</a>
+          </p>
+        </article>
+      </div>
     </section>
 
-    <section class="schedule-list reveal">
-      <article class="event">
-        <time datetime="2026-09-17T18:00">Friday, 6:00 PM</time>
-        <h3>Welcome Gathering</h3>
-        <p class="meta">Riverside Terrace</p>
-        <p>Casual drinks and light bites to kick off the weekend.</p>
-      </article>
-      <article class="event">
-        <time datetime="2026-09-18T16:00">Saturday, 4:00 PM</time>
-        <h3>Ceremony</h3>
-        <p class="meta">Hillcrest Garden</p>
-        <p>Please arrive 20 minutes early for seating.</p>
-      </article>
-      <article class="event">
-        <time datetime="2026-09-18T18:00">Saturday, 6:00 PM</time>
-        <h3>Reception</h3>
-        <p class="meta">Willow Hall</p>
-        <p>Dinner, toasts, and dancing until 11:00 PM.</p>
-      </article>
-      <article class="event">
-        <time datetime="2026-09-19T10:30">Sunday, 10:30 AM</time>
-        <h3>Farewell Brunch</h3>
-        <p class="meta">Lakeside Cafe</p>
-        <p>Stop in for coffee and a final goodbye before travel.</p>
-      </article>
+    <section class="schedule-day reveal">
+      <p class="schedule-day-label">Saturday, December 19, 2026</p>
+
+      <div class="schedule-timeline">
+        <article class="schedule-item">
+          <time class="schedule-time" datetime="2026-12-19T12:00">12:00 PM to 1:00 PM</time>
+          <h3 class="schedule-title">Ceremony - Holy Spirit Catholic Church</h3>
+          <p class="schedule-address">17270 Ward St, Fountain Valley, CA 92708, USA</p>
+          <p>The wedding ceremony will be held at Holy Spirit Catholic Church in Fountain Valley, beginning promptly at 12pm. Please arrive a few minutes early for seating.</p>
+          <p>Following the ceremony, guests are welcome to enjoy a relaxed afternoon before we gather again later in the day.</p>
+          <div class="schedule-map-wrap">
+            <iframe title="Map to Holy Spirit Catholic Church" src="https://www.google.com/maps?q=17270+Ward+St,+Fountain+Valley,+CA+92708&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <p class="schedule-actions">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ceremony+-+Holy+Spirit+Catholic+Church&dates=20261219T200000Z/20261219T210000Z&location=17270+Ward+St,+Fountain+Valley,+CA+92708" target="_blank" rel="noopener noreferrer">Add to calendar</a>
+            <span>|</span>
+            <a href="places-to-visit.html">Where to stay</a>
+            <span>|</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=17270+Ward+St,+Fountain+Valley,+CA+92708" target="_blank" rel="noopener noreferrer">Directions</a>
+          </p>
+        </article>
+
+        <article class="schedule-item">
+          <time class="schedule-time" datetime="2026-12-19T17:00">5:00 PM</time>
+          <h3 class="schedule-title">Reception - La Ventura Event Center</h3>
+          <p class="schedule-address">2316 S El Camino Real, San Clemente, CA 92672, USA</p>
+          <p>The celebration continues at 5pm at La Ventura Event Center in San Clemente, with cocktail hour followed by dinner and dancing.</p>
+          <div class="schedule-map-wrap">
+            <iframe title="Map to La Ventura Event Center" src="https://www.google.com/maps?q=2316+S+El+Camino+Real,+San+Clemente,+CA+92672&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <p class="schedule-actions">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Reception+-+La+Ventura+Event+Center&dates=20261220T010000Z/20261220T060000Z&location=2316+S+El+Camino+Real,+San+Clemente,+CA+92672" target="_blank" rel="noopener noreferrer">Add to calendar</a>
+            <span>|</span>
+            <a href="places-to-visit.html">Where to stay</a>
+            <span>|</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=2316+S+El+Camino+Real,+San+Clemente,+CA+92672" target="_blank" rel="noopener noreferrer">Directions</a>
+          </p>
+        </article>
+      </div>
     </section>
   </main>
 
