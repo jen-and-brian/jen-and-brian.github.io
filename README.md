@@ -1,4 +1,4 @@
-# Jen and Brian Wedding Website
+# Jennifer & Brian's Wedding Website
 
 Static multi-page wedding website designed for GitHub Pages root hosting.
 
@@ -9,7 +9,6 @@ Static multi-page wedding website designed for GitHub Pages root hosting.
 - `schedule.html` - Schedule
 - `places-to-visit.html` - Places to Visit
 - `faq.html` - FAQ
-- `rsvp.html` - RSVP page linking to WithJoy
 
 ## Shared Assets
 
