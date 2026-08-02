@@ -137,9 +137,10 @@ p {
 }
 
 .hero-ampersand {
-  font-family: "Parisienne", cursive !important;
+  font-family: "Crimson Pro", serif !important;
   font-weight: 400;
-  font-size: 44px !important;
+  font-style: italic;
+  font-size: 24px !important;
   color: #ffffffd1;
   margin: 0.2rem 0;
   line-height: 1;
