@@ -535,7 +535,7 @@ h3 {
 }
 
 .page-hero--minimal {
-  min-height: 250px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1111,6 +1111,9 @@ h3 {
 
 .carousel-slide {
   flex: 0 0 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .carousel-slide img {
