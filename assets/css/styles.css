@@ -1049,4 +1049,12 @@ h3 {
   .schedule-map-wrap iframe {
     height: 210px;
   }
+
+  .hero-name {
+    font-size: 48px !important;
+  }
+
+  .hero-ampersand {
+    font-size: 18px !important;
+  }
 }
