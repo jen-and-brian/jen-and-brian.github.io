@@ -38,4 +38,4 @@ This repository is configured for root-level GitHub Pages hosting (`jen-and-bria
 
 RSVP is handled externally via WithJoy:
 
-- `https://withjoy.com/jen-and-brian`
+- `https://withjoy.com/jen-and-brian-2026`
