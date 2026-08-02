@@ -48,6 +48,7 @@ p {
 /* ---- Hero banner ---- */
 .page-hero {
   position: relative;
+  width: 100%;
   min-height: 280px;
   background-image: url('../images/DSC05276.jpg');
   background-size: cover;
@@ -240,10 +241,11 @@ p {
 }
 
 .wordmark {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 25px;
+  font-family: "Parisienne", cursive;
+  font-size: 32px;
   letter-spacing: 0.02em;
   text-decoration: none;
+  color: inherit;
 }
 
 .nav-toggle {
@@ -484,10 +486,25 @@ h3 {
 }
 
 .page-hero--minimal {
-  min-height: 80px;
-  background-image: none;
-  background-color: var(--paper);
-  border-bottom: 1px solid var(--line);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page-hero--minimal .site-header {
+  position: fixed;
+}
+
+.page-hero--minimal .site-header:not(.scrolled) .wordmark {
+  color: #fffffff2;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+.page-hero--minimal .site-header:not(.scrolled) .nav-toggle {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
 }
 
 .page-hero--minimal::after {
@@ -874,6 +891,10 @@ h3 {
     gap: 0.2rem;
   }
 
+  .main-nav.open {
+    display: flex;
+  }
+
   .main-nav li {
     margin: 0;
   }
@@ -928,6 +949,14 @@ h3 {
 
   .grid-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1200px) {
+  .page-hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
   }
 }
 
