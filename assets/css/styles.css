@@ -315,12 +315,11 @@ p {
 }
 
 h1 {
-  margin-top: 0;
-  font-family: "Parisienne", cursive;
-  font-weight: 400;
-  line-height: 1.2;
-  font-size: 60px;
-  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  color: #5a524b;
+  margin: 0 0 0.6rem;
 }
 
 h2,
@@ -512,7 +511,7 @@ h3 {
 }
 
 .schedule-day {
-  margin-top: 0.4rem;
+  margin-top: 1rem;
 }
 
 .schedule-day + .schedule-day {
@@ -684,13 +683,14 @@ h3 {
   color: #333333;
 }
 
-.page-faq {
-  padding-top: 1.5rem;
+.qa-intro {
+  text-align: left;
 }
 
-.qa-intro {
-  text-align: center;
-  margin-bottom: 1.8rem;
+.page-hero--minimal + .page > .section:first-child,
+.page-hero--minimal + .page > .schedule-day:first-child,
+.page-hero--minimal + .page > .qa-intro:first-child {
+  margin-top: 1rem;
 }
 
 .qa-title {
