@@ -483,6 +483,17 @@ h3 {
   color: #fff;
 }
 
+.page-hero--minimal {
+  min-height: 80px;
+  background-image: none;
+  background-color: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero--minimal::after {
+  display: none;
+}
+
 .schedule-day {
   margin-top: 0.4rem;
 }
