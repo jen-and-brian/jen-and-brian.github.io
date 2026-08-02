@@ -52,6 +52,40 @@ if (countdownEl) {
   setInterval(tick, 1000);
 }
 
+// Image carousel
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('[data-carousel-track]');
+  const slides = Array.from(track.children);
+  const dotsContainer = carousel.querySelector('[data-carousel-dots]');
+  let current = 0;
+
+  const dots = slides.map((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    btn.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    btn.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(btn);
+    return btn;
+  });
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => goTo(current - 1));
+  carousel.querySelector('[data-carousel-next]').addEventListener('click', () => goTo(current + 1));
+
+  // Swipe support
+  let startX = 0;
+  track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  });
+});
+
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(
