@@ -456,6 +456,31 @@ h3 {
   padding: 1.1rem;
 }
 
+.place-list {
+  list-style: disc;
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+}
+
+.place-list li {
+  font-size: 15px;
+  color: #3d342b;
+  line-height: 1.6;
+  padding: 0.2rem 0;
+}
+
+.section-label {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #333333;
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--brand);
+}
+
 .section {
   margin: 2rem 0;
 }
