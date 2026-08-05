@@ -249,6 +249,10 @@ p {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
 }
 
+.site-header:not(.scrolled) .nav-logo {
+  filter: invert(1);
+}
+
 .site-header:not(.scrolled) .nav-toggle {
   border-color: rgba(255, 255, 255, 0.45);
   background: rgba(255, 255, 255, 0.12);
@@ -271,6 +275,13 @@ p {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: inherit;
+}
+
+.nav-logo {
+  height: 64px;
+  width: auto;
+  display: block;
+  transition: filter 280ms ease;
 }
 
 .nav-toggle {
