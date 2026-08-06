@@ -240,7 +240,6 @@ p {
   background: rgba(255, 253, 247, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(143, 95, 70, 0.2);
-  box-shadow: 0 2px 12px rgba(59, 42, 29, 0.07);
 }
 
 /* Wordmark + toggle: white on hero */
@@ -761,14 +760,12 @@ h3 {
 
 .qa-category-title {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #333333;
   margin: 1.5rem 0 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border-bottom: 2px solid var(--brand);
-  padding-bottom: 0.5rem;
 }
 
 .qa-subtitle {
