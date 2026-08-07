@@ -64,48 +64,6 @@ p {
   background-attachment: fixed;
 }
 
-/* ---- Hero carousel (disabled) ----
-.hero-carousel {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  animation: slideLeft 15s linear infinite;
-}
-
-.hero-slide:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.hero-slide:nth-child(2) {
-  animation-delay: -5s;
-}
-
-.hero-slide:nth-child(3) {
-  animation-delay: -10s;
-}
-
-@keyframes slideLeft {
-  0% {
-    transform: translateX(100%);
-  }
-  33.33% {
-    transform: translateX(0);
-  }
-  66.66% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
----- */
 
 .page-hero::after {
   position: absolute;
@@ -480,15 +438,13 @@ h3 {
 }
 
 .section-label {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #333333;
+  letter-spacing: 0.18em;
+  color: #5a524b;
   margin: 0 0 0.8rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--brand);
+  font-family: inherit;
 }
 
 .section {
@@ -759,13 +715,13 @@ h3 {
 }
 
 .qa-category-title {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: #333333;
-  margin: 1.5rem 0 0.6rem;
+  font-size: 16px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.18em;
+  color: #5a524b;
+  margin: 1.5rem 0 0.6rem;
+  font-family: inherit;
 }
 
 .qa-subtitle {
@@ -786,10 +742,11 @@ h3 {
 
 .qa-question {
   margin: 0 0 0.6rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
   color: #333333;
 }
 
@@ -1128,7 +1085,6 @@ h3 {
   width: 100%;
   height: 520px;
   object-fit: contain;
-  background: #f5f0ea;
   display: block;
 }
 
