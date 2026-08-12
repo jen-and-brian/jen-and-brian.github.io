@@ -760,16 +760,6 @@ h3 {
   padding: 0;
 }
 
-.qa-question {
-  margin: 0 0 0.6rem;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: normal;
-  text-transform: none;
-  color: #333333;
-}
-
 .qa-answer {
   margin: 0 0 0.55rem;
   padding: 0;
