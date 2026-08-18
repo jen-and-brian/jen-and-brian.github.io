@@ -15,6 +15,29 @@ if (navToggle && nav) {
   });
 }
 
+document.querySelectorAll('a[href]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      link.target === '_blank' ||
+      link.hasAttribute('download') ||
+      link.origin !== window.location.origin ||
+      link.pathname === window.location.pathname
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    document.body.classList.add('page-is-leaving');
+    window.setTimeout(() => { window.location.href = link.href; }, 180);
+  });
+});
+
 const yearTarget = document.querySelector('[data-year]');
 if (yearTarget) {
   yearTarget.textContent = String(new Date().getFullYear());

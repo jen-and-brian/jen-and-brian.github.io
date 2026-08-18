@@ -30,6 +30,12 @@ body {
   color: #333333;
   background: var(--bg-sand);
   line-height: 1.6;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+body.page-is-leaving {
+  opacity: 0;
+  transform: translateY(8px);
 }
 
 img {
@@ -39,6 +45,21 @@ img {
 
 a {
   color: #7d8e51;
+}
+
+a,
+button {
+  transition: transform 160ms ease, scale 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+a:active,
+button:active {
+  scale: 0.97;
+}
+
+a,
+button {
+  transition-property: transform, scale, background-color, color, border-color;
 }
 
 p {
@@ -938,11 +959,18 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  a,
+  button,
+  body,
+  .reveal,
+  .reveal.is-visible {
+    transition: none;
+  }
+
   .reveal,
   .reveal.is-visible {
     opacity: 1;
     transform: none;
-    transition: none;
   }
 
   .panel,
