@@ -54,8 +54,14 @@ if (visitorCountTarget) {
   const sessionSeenKey = 'visitor-counted-this-session';
   const localTotalKey = 'visitor-count-site-total';
 
-  const setVisitorText = (value) => {
+  const showVisitorText = (value) => {
     visitorCountTarget.textContent = `Hello, visitor #${value.toLocaleString()}!`;
+    visitorCountTarget.classList.add('is-visible');
+  };
+
+  const hideVisitorText = () => {
+    visitorCountTarget.textContent = '';
+    visitorCountTarget.classList.remove('is-visible');
   };
 
   const parseCount = (data) => {
@@ -73,13 +79,6 @@ if (visitorCountTarget) {
     .then((response) => response.json())
     .then(parseCount);
 
-  const getLocalCount = () => Number(window.localStorage.getItem(localTotalKey) || '0');
-  const incrementLocalCount = () => {
-    const next = getLocalCount() + 1;
-    window.localStorage.setItem(localTotalKey, String(next));
-    return next;
-  };
-
   let hasCountedThisSession = false;
   try {
     hasCountedThisSession = window.sessionStorage.getItem(sessionSeenKey) === '1';
@@ -91,7 +90,7 @@ if (visitorCountTarget) {
 
   fetchCount()
     .then((value) => {
-      setVisitorText(value);
+      showVisitorText(value);
       window.localStorage.setItem(localTotalKey, String(value));
       try {
         window.sessionStorage.setItem(sessionSeenKey, '1');
@@ -100,13 +99,7 @@ if (visitorCountTarget) {
       }
     })
     .catch(() => {
-      const localValue = hasCountedThisSession ? getLocalCount() : incrementLocalCount();
-      setVisitorText(localValue);
-      try {
-        window.sessionStorage.setItem(sessionSeenKey, '1');
-      } catch {
-        // Ignore storage write failures.
-      }
+      hideVisitorText();
     });
 }
 
