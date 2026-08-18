@@ -618,6 +618,34 @@ h3 {
   color: #7d8e51;
 }
 
+.schedule-calendar-action {
+  margin: 0 0 2rem;
+}
+
+.schedule-calendar-action a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid var(--brand);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--brand-dark);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  text-decoration: none;
+  box-shadow: 0 5px 14px rgba(107, 123, 67, 0.18);
+}
+
+.schedule-calendar-action a:hover,
+.schedule-calendar-action a:focus-visible {
+  background: var(--brand);
+  border-color: var(--brand-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
 .schedule-menu-heading {
   margin: 0.8rem 0 0.3rem;
   font-family: 'Cormorant Garamond', serif;
