@@ -50,8 +50,6 @@ if (yearTarget) {
 const visitorCountTarget = document.querySelector('[data-visitor-count]');
 if (visitorCountTarget) {
   const counterBaseUrl = 'https://api.counterapi.dev/v2/jen-and-brian-github-io/site-total';
-  const sessionSeenKey = 'visitor-counted-this-session-counterapi-site-total';
-  const localTotalKey = 'visitor-count-counterapi-site-total';
 
   const showVisitorText = (value) => {
     visitorCountTarget.textContent = `Hello, visitor #${value.toLocaleString()}!`;
@@ -80,32 +78,13 @@ if (visitorCountTarget) {
     return count;
   };
 
-  const getRemoteCount = () => fetch(counterBaseUrl)
+  const hitRemoteCount = () => fetch(`${counterBaseUrl}/up?t=${Date.now()}`, { cache: 'no-store' })
     .then((response) => response.json())
     .then(parseCount);
 
-  const hitRemoteCount = () => fetch(`${counterBaseUrl}/up`)
-    .then((response) => response.json())
-    .then(parseCount);
-
-  let hasCountedThisSession = false;
-  try {
-    hasCountedThisSession = window.sessionStorage.getItem(sessionSeenKey) === '1';
-  } catch {
-    hasCountedThisSession = false;
-  }
-
-  const fetchCount = hasCountedThisSession ? getRemoteCount : hitRemoteCount;
-
-  fetchCount()
+  hitRemoteCount()
     .then((value) => {
       showVisitorText(value);
-      window.localStorage.setItem(localTotalKey, String(value));
-      try {
-        window.sessionStorage.setItem(sessionSeenKey, '1');
-      } catch {
-        // Ignore storage write failures.
-      }
     })
     .catch(() => {
       hideVisitorText();
