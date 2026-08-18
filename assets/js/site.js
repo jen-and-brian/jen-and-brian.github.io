@@ -49,10 +49,9 @@ if (yearTarget) {
 
 const visitorCountTarget = document.querySelector('[data-visitor-count]');
 if (visitorCountTarget) {
-  const namespace = 'jen-and-brian-github-io';
-  const counterKey = 'site-total';
-  const sessionSeenKey = 'visitor-counted-this-session';
-  const localTotalKey = 'visitor-count-site-total';
+  const counterBaseUrl = 'https://api.counterapi.dev/v2/jen-and-brian-github-io/site-total';
+  const sessionSeenKey = 'visitor-counted-this-session-counterapi-site-total';
+  const localTotalKey = 'visitor-count-counterapi-site-total';
 
   const showVisitorText = (value) => {
     visitorCountTarget.textContent = `Hello, visitor #${value.toLocaleString()}!`;
@@ -65,17 +64,23 @@ if (visitorCountTarget) {
   };
 
   const parseCount = (data) => {
-    if (typeof data.value !== 'number') {
+    const count = typeof data?.value === 'number'
+      ? data.value
+      : typeof data?.data === 'number'
+        ? data.data
+        : null;
+
+    if (typeof count !== 'number') {
       throw new Error('Invalid visitor count response');
     }
-    return data.value;
+    return count;
   };
 
-  const getRemoteCount = () => fetch(`https://api.countapi.xyz/get/${namespace}/${counterKey}`)
+  const getRemoteCount = () => fetch(counterBaseUrl)
     .then((response) => response.json())
     .then(parseCount);
 
-  const hitRemoteCount = () => fetch(`https://api.countapi.xyz/hit/${namespace}/${counterKey}`)
+  const hitRemoteCount = () => fetch(`${counterBaseUrl}/up`)
     .then((response) => response.json())
     .then(parseCount);
 
