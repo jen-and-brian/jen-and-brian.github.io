@@ -52,7 +52,7 @@ if (visitorCountTarget) {
   const counterBaseUrl = 'https://api.counterapi.dev/v2/jen-and-brian-github-io/site-total';
 
   const showVisitorText = (value) => {
-    visitorCountTarget.textContent = `Hello, visitor #${value.toLocaleString()}!`;
+    visitorCountTarget.textContent = `This little site has welcomed ${value.toLocaleString()} visits!`;
     visitorCountTarget.classList.add('is-visible');
   };
 

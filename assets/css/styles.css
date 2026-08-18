@@ -882,7 +882,7 @@ h3 {
 
 .page-visitor-note {
   display: none;
-  margin: 0.4rem auto 0.35rem;
+  margin: 0;
   font-size: 12px;
   letter-spacing: 0.04em;
   color: #7a6f65;
