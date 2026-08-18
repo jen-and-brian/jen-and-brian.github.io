@@ -68,7 +68,11 @@ if (visitorCountTarget) {
       ? data.value
       : typeof data?.data === 'number'
         ? data.data
-        : null;
+        : typeof data?.count === 'number'
+          ? data.count
+          : typeof data?.data?.up_count === 'number'
+            ? data.data.up_count
+            : null;
 
     if (typeof count !== 'number') {
       throw new Error('Invalid visitor count response');
