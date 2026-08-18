@@ -47,6 +47,69 @@ if (yearTarget) {
   yearTarget.textContent = String(new Date().getFullYear());
 }
 
+const visitorCountTarget = document.querySelector('[data-visitor-count]');
+if (visitorCountTarget) {
+  const namespace = 'jen-and-brian-github-io';
+  const counterKey = 'site-total';
+  const sessionSeenKey = 'visitor-counted-this-session';
+  const localTotalKey = 'visitor-count-site-total';
+
+  const setVisitorText = (value) => {
+    visitorCountTarget.textContent = `Hello, visitor #${value.toLocaleString()}!`;
+  };
+
+  const parseCount = (data) => {
+    if (typeof data.value !== 'number') {
+      throw new Error('Invalid visitor count response');
+    }
+    return data.value;
+  };
+
+  const getRemoteCount = () => fetch(`https://api.countapi.xyz/get/${namespace}/${counterKey}`)
+    .then((response) => response.json())
+    .then(parseCount);
+
+  const hitRemoteCount = () => fetch(`https://api.countapi.xyz/hit/${namespace}/${counterKey}`)
+    .then((response) => response.json())
+    .then(parseCount);
+
+  const getLocalCount = () => Number(window.localStorage.getItem(localTotalKey) || '0');
+  const incrementLocalCount = () => {
+    const next = getLocalCount() + 1;
+    window.localStorage.setItem(localTotalKey, String(next));
+    return next;
+  };
+
+  let hasCountedThisSession = false;
+  try {
+    hasCountedThisSession = window.sessionStorage.getItem(sessionSeenKey) === '1';
+  } catch {
+    hasCountedThisSession = false;
+  }
+
+  const fetchCount = hasCountedThisSession ? getRemoteCount : hitRemoteCount;
+
+  fetchCount()
+    .then((value) => {
+      setVisitorText(value);
+      window.localStorage.setItem(localTotalKey, String(value));
+      try {
+        window.sessionStorage.setItem(sessionSeenKey, '1');
+      } catch {
+        // Ignore storage write failures.
+      }
+    })
+    .catch(() => {
+      const localValue = hasCountedThisSession ? getLocalCount() : incrementLocalCount();
+      setVisitorText(localValue);
+      try {
+        window.sessionStorage.setItem(sessionSeenKey, '1');
+      } catch {
+        // Ignore storage write failures.
+      }
+    });
+}
+
 // Transition header from transparent-over-hero to sticky-cream on scroll
 const pageHero = document.querySelector('.page-hero');
 const siteHeader = document.querySelector('.site-header');

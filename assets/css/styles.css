@@ -880,6 +880,14 @@ h3 {
   padding: 1.2rem 1rem 2.2rem;
 }
 
+.page-visitor-note {
+  margin: 0.4rem auto 0.35rem;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #7a6f65;
+  text-align: center;
+}
+
 .footer-inner {
   max-width: var(--max);
   margin: 0 auto;
