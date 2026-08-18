@@ -1,10 +1,6 @@
 const navToggle = document.querySelector('[data-nav-toggle]');
 const nav = document.querySelector('[data-nav]');
 
-window.requestAnimationFrame(() => {
-  document.body.classList.add('page-is-ready');
-});
-
 if (navToggle && nav) {
   navToggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('open');

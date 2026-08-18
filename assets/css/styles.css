@@ -34,19 +34,37 @@ body {
   color: #333333;
   background: var(--bg-sand);
   line-height: 1.6;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity 220ms ease, transform 220ms ease;
+  animation: page-enter 220ms ease both;
 }
 
-body.page-is-ready {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 body.page-is-leaving {
-  opacity: 0;
-  transform: translateY(8px);
+  animation: page-leave 180ms ease both;
+}
+
+@keyframes page-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+body.page-is-leaving {
+  animation-name: page-leave;
 }
 
 img {
@@ -1020,6 +1038,7 @@ h3 {
   body.page-is-leaving {
     opacity: 1;
     transform: none;
+    animation: none;
   }
 
   .panel,
