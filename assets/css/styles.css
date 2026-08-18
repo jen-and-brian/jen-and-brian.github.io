@@ -676,6 +676,18 @@ h3 {
   text-decoration: underline;
 }
 
+.schedule-actions.schedule-calendar-action a,
+.schedule-actions.schedule-calendar-action a:hover,
+.schedule-actions.schedule-calendar-action a:focus-visible {
+  color: var(--brand-dark);
+  text-decoration: none;
+}
+
+.schedule-actions.schedule-calendar-action a:hover,
+.schedule-actions.schedule-calendar-action a:focus-visible {
+  color: #fff;
+}
+
 .schedule-actions span {
   color: #9c9a8e;
   margin: 0 6px;
