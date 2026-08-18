@@ -42,7 +42,7 @@ a {
 }
 
 p {
-  font-size: 14px;
+  font-size: inherit;
 }
 
 /* ---- Hero banner ---- */
@@ -348,7 +348,6 @@ h3 {
 .panel,
 .event,
 .place,
-.faq-item,
 .cta-box {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -424,27 +423,39 @@ h3 {
   padding: 1.1rem;
 }
 
-.place-list {
+.place-list,
+.schedule-menu {
   list-style: disc;
-  margin: 0;
+  margin: 0 0 0.6rem;
   padding: 0 0 0 1.2rem;
+  color: #3d342b;
 }
 
-.place-list li {
+.place-list li,
+.schedule-menu li {
   font-size: 15px;
   color: #3d342b;
   line-height: 1.6;
   padding: 0.2rem 0;
+  margin: 0;
 }
 
-.section-label {
+.section-label,
+.qa-category-title {
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: #5a524b;
-  margin: 0 0 0.8rem;
   font-family: inherit;
+}
+
+.section-label {
+  margin: 0 0 0.8rem;
+}
+
+.section-label--spaced {
+  margin-top: 2rem;
 }
 
 .section {
@@ -475,29 +486,6 @@ h3 {
   display: grid;
   gap: 1rem;
   margin-top: 1rem;
-}
-
-.page-hero--subtle {
-  /* inherits height and background from .page-hero */
-}
-
-.page-hero--subtle::after {
-  display: none;
-}
-
-.page-hero--subtle .site-header:not(.scrolled) .wordmark {
-  color: #fffffff2;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
-}
-
-.page-hero--subtle .site-header:not(.scrolled) .nav-toggle {
-  border-color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-}
-
-.page-hero--subtle .site-header:not(.scrolled) .main-nav a {
-  color: #fff;
 }
 
 .page-hero--minimal {
@@ -656,16 +644,6 @@ h3 {
   color: #5a4e3c;
 }
 
-.schedule-menu {
-  margin: 0 0 0.6rem 1.2rem;
-  padding: 0;
-  color: #5a4e3c;
-}
-
-.schedule-menu li {
-  margin-bottom: 0.25rem;
-}
-
 .schedule-actions a {
   color: #7d8e51;
   text-decoration: none;
@@ -688,110 +666,27 @@ h3 {
   color: #fff;
 }
 
-.schedule-actions span {
-  color: #9c9a8e;
-  margin: 0 6px;
-}
-
 .event time {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 21px;
   color: #6b7b43;
 }
 
-.faq {
-  display: grid;
-  gap: 0.9rem;
-}
-
-.faq-item {
-  overflow: clip;
-}
-
-.faq-item summary {
-  cursor: pointer;
-  padding: 0.9rem 1rem;
-  font-weight: 700;
-  list-style: none;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item summary::after {
-  content: "+";
-  float: right;
-  color: #6b7b43;
-}
-
-.faq-item[open] summary::after {
-  content: "-";
-}
-
-.faq-item p {
-  margin: 0;
-  padding: 0 1rem 1rem;
-  color: #5a524b;
-}
-
-.faq-item table {
-  width: calc(100% - 2rem);
-  margin: 0 1rem 1rem;
-  border-collapse: collapse;
-  font-size: 13px;
-}
-
-.faq-item th,
-.faq-item td {
-  border: 1px solid #d9cdbb;
-  padding: 6px 8px;
-  text-align: left;
-  vertical-align: top;
-}
-
-.faq-item th {
-  background: #f8f3e8;
-  color: #333333;
-}
-
-.qa-intro {
-  text-align: left;
-}
-
 .page-hero--minimal + .page > .section:first-child,
-.page-hero--minimal + .page > .schedule-day:first-child,
-.page-hero--minimal + .page > .qa-intro:first-child {
+.page-hero--minimal + .page > .schedule-day:first-child {
   margin-top: 1rem;
 }
 
-.qa-title {
-  font-family: "Parisienne", cursive;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 1;
-  margin: 0 0 0.8rem;
-  color: #333333;
-}
-
 .qa-category-title {
-  font-size: 16px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #5a524b;
   margin: 2rem 0 0.8rem;
-  font-family: inherit;
 }
 
 .qa-category-title:first-child {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .qa-subtitle {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
   text-align: left;
 }
 
@@ -811,7 +706,6 @@ h3 {
 .qa-answer {
   margin: 0 0 0.55rem;
   padding: 0;
-  color: #5a524b;
 }
 
 .qa-table-wrap {
@@ -922,16 +816,14 @@ h3 {
 .panel,
 .event,
 .place,
-.cta-box,
-.faq-item {
+.cta-box {
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
 .panel:hover,
 .event:hover,
 .place:hover,
-.cta-box:hover,
-.faq-item:hover {
+.cta-box:hover {
   transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(59, 42, 29, 0.14);
   border-color: #c8a98f;
@@ -1053,7 +945,6 @@ h3 {
   .event,
   .place,
   .cta-box,
-  .faq-item,
   .button,
   .link-chip {
     transition: none;
@@ -1067,18 +958,6 @@ h3 {
 
   .page {
     padding: 1.6rem 0.9rem 3rem;
-  }
-
-  .qa-title {
-    font-size: 48px;
-  }
-
-  .qa-subtitle {
-    font-size: 13px;
-  }
-
-  .qa-question {
-    font-size: 19px;
   }
 
   .schedule-day-label {
