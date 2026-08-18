@@ -175,6 +175,56 @@ p {
   gap: 0.5rem;
 }
 
+.page-hero--home .hero-name,
+.page-hero--home .hero-ampersand,
+.page-hero--home .home-date,
+.page-hero--home .home-location,
+.page-hero--home .home-countdown,
+.page-hero--home .button-rsvp {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: hero-fade-up 640ms ease forwards;
+}
+
+.page-hero--home .hero-name:first-of-type {
+  animation-delay: 120ms;
+}
+
+.page-hero--home .hero-ampersand {
+  animation-delay: 260ms;
+}
+
+.page-hero--home .hero-name:last-of-type {
+  animation-delay: 380ms;
+}
+
+.page-hero--home .home-date {
+  animation-delay: 520ms;
+}
+
+.page-hero--home .home-location {
+  animation-delay: 660ms;
+}
+
+.page-hero--home .home-countdown {
+  animation-delay: 800ms;
+}
+
+.page-hero--home .button-rsvp {
+  animation-delay: 940ms;
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ---- Home intro card ---- */
 .home-intro {
   max-width: 600px;
@@ -1036,6 +1086,17 @@ h3 {
   }
 
   body.page-is-leaving {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .page-hero--home .hero-name,
+  .page-hero--home .hero-ampersand,
+  .page-hero--home .home-date,
+  .page-hero--home .home-location,
+  .page-hero--home .home-countdown,
+  .page-hero--home .button-rsvp {
     opacity: 1;
     transform: none;
     animation: none;
