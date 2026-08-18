@@ -768,8 +768,12 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: #5a524b;
-  margin: 1.5rem 0 0.6rem;
+  margin: 2rem 0 0.8rem;
   font-family: inherit;
+}
+
+.qa-category-title:first-child {
+  margin-top: 1.5rem;
 }
 
 .qa-subtitle {
@@ -780,12 +784,16 @@ h3 {
 }
 
 .qa-list {
-  display: grid;
-  gap: 1.6rem;
+  display: block;
 }
 
 .qa-entry {
   padding: 0;
+  margin: 0 0 1.2rem;
+}
+
+.qa-entry > p:first-child {
+  margin: 0 0 0.35rem;
 }
 
 .qa-answer {
